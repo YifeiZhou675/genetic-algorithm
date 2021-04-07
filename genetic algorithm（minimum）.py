@@ -32,7 +32,7 @@ def calobjValue(pop, chrom_length, min_value, max_value):
     obj_value = []
     temp1 = decodechrom(pop, chrom_length)
     for i in range(len(temp1)):
-        x = min_value + temp1[i] * max_value / (math.pow(2, chrom_length) - 1)
+        x = min_value + temp1[i] * (max_value - min_value) / (math.pow(2, chrom_length) - 1)
         obj_value.append(10 * math.sin(5 * x) + 7 * math.cos(4 * x))
     return obj_value
 
